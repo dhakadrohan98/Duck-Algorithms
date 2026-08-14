@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 class RunnableImpl implements Runnable {
     @Override
     public void run() {
-        System.out.println(Thread.currentThread().getName() + "- printing from a different thread than Main");
+        System.out.println(Thread.currentThread().getName() + "- printing from a different thread than org.codeship.main.Main");
      }
 }
 
