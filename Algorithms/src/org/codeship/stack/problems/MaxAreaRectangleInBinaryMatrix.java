@@ -2,11 +2,33 @@ package org.codeship.stack.problems;
 
 import java.util.Stack;
 
+public class MaxAreaRectangleInBinaryMatrix {
 
-public class LargestRectabgleAreaInHistogram {
+    //TC: O((m*n) * 3n)
+    //SC: O(2n+m)
+    public static int maxArea(int arr[][]) {
+        int n = arr.length;
+        int m = arr[0].length;
+        int maxArea = 0;
+        //edge case
+        if(n == 0 || m == 0) {
+            return 0;
+        }
+        int[] currRow = new int[m];
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
+                if(arr[i][j] == 1) {
+                    currRow[j] += 1;
+                } else if(arr[i][j] == 0) {
+                    currRow[j] = 0;
+                }
+            }
+            int currentHistogramArea = getMaxArea(currRow);
+            maxArea = Math.max(maxArea, currentHistogramArea);
+        }
+        return maxArea;
+    }
 
-    //TC: O(3n)
-    //SC: O(2n)
     public static int getMaxArea(int arr[]) {
         int n = arr.length;
         int[] nstl = nstl(arr);
@@ -57,15 +79,11 @@ public class LargestRectabgleAreaInHistogram {
         return res;
     }
 
-    public static void main() {
-        int[] arr = new int[]{6, 2, 5, 4, 5, 1, 6};
-        int maxArea = getMaxArea(arr);
-        System.out.println(maxArea);
-
-//        int[] ans = nstr(arr);
-//        for(int num: ans) {
-//            System.out.print(num + " ");
-//        }
+    public static void main(String[] args) {
+        int[][] arr = {{0, 1, 1, 0},
+                       {1, 1, 1, 1},
+                       {1, 1, 1, 1},
+                       {0, 1, 0, 0}};
+        System.out.println(maxArea(arr));
     }
-
 }
