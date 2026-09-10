@@ -1,3 +1,4 @@
+package org.codeship;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -83,6 +84,7 @@ public class Test {
         return 0;
     }
 
-    public static void main() {
+    public static void main(String[] args) {
+    	System.out.println("Rotting oranges");
     }
 }
