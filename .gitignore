@@ -1,0 +1,19 @@
+# Build output & compiled bytecode
+out/
+*.class
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.metadata/
+.classpath
+.project
+.settings/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+/.metadata/
