@@ -1,4 +1,4 @@
-package org.codeship.sliding.window;
+package org.codeship.variablesize.slidingwindow;
 
 import java.util.HashMap;
 import java.util.Map;
